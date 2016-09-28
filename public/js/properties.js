@@ -140,7 +140,7 @@ var vm = new Vue({
 
 
         getVueItems: function(page){
-            this.$http.get('/laravel/farmbook_admin_test/public/vueproperties?page='+page).then((response) => {
+            this.$http.get('/farmbook_admin_test/public/vueproperties?page='+page).then((response) => {
               this.$set('items', response.data.data.data);
               this.$set('pagination', response.data.pagination);
 
