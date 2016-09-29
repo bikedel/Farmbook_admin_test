@@ -171,9 +171,16 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/settings', 'SettingsController@index');
 
     // Property maintenance
-    // Buyers
+
     Route::get('manage-properties', 'VuePropertyController@manageVue');
     Route::resource('vueproperties', 'VuePropertyController');
     Route::post('searchvueproperties/{search}', 'VuePropertyController@search');
     Route::get('vuepropertiesSelects', 'VuePropertyController@selects');
+
+    // Owner maintenance
+
+    Route::get('manage-owners', 'VueOwnerController@manageVue');
+    Route::resource('vueowners', 'VueOwnerController');
+    Route::post('searchvueowners/{search}', 'VueOwnerController@search');
+
 });
