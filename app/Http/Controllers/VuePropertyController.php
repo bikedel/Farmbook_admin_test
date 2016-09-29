@@ -150,9 +150,29 @@ class VuePropertyController extends Controller
         //change database
         $property = new Property;
         $property->changeConnection($database);
+/*
+$this->validate($request, [
 
-        $this->validate($request, [
+'numErf'         => 'required',
+'numPortion'     => 'required',
+'strStreetNo'    => 'required',
+'strStreetName'  => 'required',
+'strSqMeters'    => 'required',
+'strComplexNo'   => 'required',
+'strComplexName' => 'required',
+'dtmRegDate'     => 'required',
+'strAmount'      => 'required',
+'strBondHolder'  => 'required',
+'strBondAmount'  => 'required',
+//'strIdentity'    => 'required|digits:13',
+'strIdentity'    => 'required',
+'strSellers'     => 'required',
+'strTitleDeed'   => 'required',
 
+]);
+ */
+
+        $rules = array(
             'numErf'         => 'required',
             'numPortion'     => 'required',
             'strStreetNo'    => 'required',
@@ -164,12 +184,38 @@ class VuePropertyController extends Controller
             'strAmount'      => 'required',
             'strBondHolder'  => 'required',
             'strBondAmount'  => 'required',
-//'strIdentity'    => 'required|digits:13',
+            //'strIdentity'    => 'required|digits:13',
             'strIdentity'    => 'required',
             'strSellers'     => 'required',
             'strTitleDeed'   => 'required',
+        );
 
-        ]);
+        $messsages = array(
+            'numErf.required'         => 'This field is required',
+            'numPortion.required'     => 'This field is required',
+            'strStreetNo.required'    => 'This field is required',
+            'strStreetName.required'  => 'This field is required',
+            'strSqMeters.required'    => 'This field is required',
+            'strComplexNo.required'   => 'This field is required',
+            'strComplexName.required' => 'This field is required',
+            'dtmRegDate.required'     => 'This field is required',
+            'strAmount.required'      => 'This field is required',
+            'strBondHolder.required'  => 'This field is required',
+            'strBondAmount.required'  => 'This field is required',
+            //'strIdentity'    => 'required|digits:13',
+            'strIdentity.required'    => 'This field is required',
+            'strSellers.required'     => 'This field is required',
+            'strTitleDeed.required'   => 'This field is required',
+        );
+
+        $validator = \Illuminate\Support\Facades\Validator::make($request->all(), $rules, $messsages);
+
+        if ($validator->fails()) {
+            // send back to the page with the input data and errors
+
+            return response()->json($validator->errors()->getMessages(), 422);
+
+        }
 
         // check if the id number and erf already exist in properties
         $numErf     = $request->input('numErf');
