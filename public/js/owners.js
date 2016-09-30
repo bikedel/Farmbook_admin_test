@@ -122,7 +122,7 @@ var vm = new Vue({
 
 
         getVueItems: function(page){
-            this.$http.get('/farmbook_admin_test/public/vueowners?page='+page).then((response) => {
+            this.$http.get('/laravel/farmbook_admin_test/public/vueowners?page='+page).then((response) => {
               this.$set('items', response.data.data.data);
               this.$set('pagination', response.data.pagination);
 
@@ -140,14 +140,14 @@ var vm = new Vue({
 
            // clear search
            if (!input) {
-            this.$http.get('/farmbook_admin_test/public/vueowners?page='+page).then((response) => {
+            this.$http.get('/laravel/farmbook_admin_test/public/vueowners?page='+page).then((response) => {
               this.$set('items', response.data.data.data);
               this.$set('pagination', response.data.pagination);
             //  this.$set('agents', response.data.agents);
             });
           // do search
            } else {
-            this.$http.post('/farmbook_admin_test/public/searchvueowners/'+input).then((response) => {
+            this.$http.post('/laravel/farmbook_admin_test/public/searchvueowners/'+input).then((response) => {
               this.$set('items', response.data.data.data);
               this.$set('pagination', response.data.pagination);
            //   this.$set('agents', response.data.agents);
@@ -159,7 +159,7 @@ var vm = new Vue({
         createItem: function(){
       		  var input = this.newItem;
             //alert(this.newItem.selected);
-      		  this.$http.post('/farmbook_admin_test/public/vueowners',input).then((response) => {
+      		  this.$http.post('/laravel/farmbook_admin_test/public/vueowners',input).then((response) => {
           		  this.changePage(this.pagination.current_page);
           			this.newItem = {
                         'strIDNumber':'',
@@ -185,9 +185,11 @@ var vm = new Vue({
 
           var result = confirm("Are you sure you would like to delete this Property?");
           if (result) {
-                  this.$http.delete('/farmbook_admin_test/public/vueowners/'+item.id).then((response) => {
+                  this.$http.delete('/laravel/farmbook_admin_test/public/vueowners/'+item.id).then((response) => {
                       this.changePage(this.pagination.current_page);
                       toastr.success('Owner Deleted Successfully.', 'Success Alert', {timeOut: 5000});
+                      }, (response) => {
+               toastr.error('Owner not deleted.', 'The owner is in properties.', {timeOut: 5000});
                   });
           }
 
@@ -214,7 +216,7 @@ var vm = new Vue({
      
         //this.fillItem.selected = this.selectedAgent;
         var input = this.fillItem;
-        this.$http.put('/farmbook_admin_test/public/vueowners/'+id,input).then((response) => {
+        this.$http.put('/laravel/farmbook_admin_test/public/vueowners/'+id,input).then((response) => {
             this.changePage(this.pagination.current_page);
             this.fillItem = {
                         'id':'',

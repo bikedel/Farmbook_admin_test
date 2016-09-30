@@ -276,7 +276,18 @@ class VueOwnerController extends Controller
         $owner = new Property;
         $owner->changeConnection($database);
 
-        Owner::on($database)->find($id)->delete();
+        $owner = Owner::on($database)->find($id);
+
+        $idnumber = $owner->strIDNumber;
+
+        $property = Property::on($database)->where('strIdentity', $idnumber)->get();
+
+        if ($property->count()) {
+
+            return response()->json(['test' => 'Cant delete as it is in properties'], 422);
+        }
+
+        $owner->delete();
 
         return response()->json(['done']);
     }
