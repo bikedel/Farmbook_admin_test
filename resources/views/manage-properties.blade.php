@@ -174,7 +174,9 @@ pre {
                     <th width="140px">Identity</th>
                     <th width="300px">Owner</th>
                     <th width="300px">Sellers</th>
-                    <th width="300px">Reg Date</th>
+                    <th width="120px">Reg Date</th>
+                    <th width="800px">Notes</th>
+                    <th width="800px">Followup</th>
                 </tr>
                 <tr v-for="item in items">
                     <td >
@@ -191,6 +193,8 @@ pre {
                     <td>@{{ item.strOwners}}</td>
                     <td>@{{ item.strSellers}}</td>
                     <td>@{{ item.dtmRegDate}}</td>
+                    <td>@{{ item.note.memNotes}}</td>
+                    <td>@{{ item.note.followup}}</td>
                 </tr>
             </table>
         </div>
@@ -456,6 +460,18 @@ pre {
                                </option>
                         </select>
                         <span v-if="formErrorsUpdate['strIdentity']" class="error text-danger">@{{ formErrorsUpdate['strIdentity'] }}</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Firstname">note:</label>
+                        <textarea  name="note" rows="5" class="form-control" v-model="fillItem.note" ></textarea>
+                        <span v-if="formErrorsUpdate['note']" class="error text-danger">@{{ formErrorsUpdate['note'] }}</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Firstname">followup:</label>
+                        <input type="date" name="dtmRegDate" class="form-control datepicker" v-model="fillItem.followup" />
+                        <span v-if="formErrorsUpdate['followup']" class="error text-danger">@{{ formErrorsUpdate['followup'] }}</span>
                     </div>
 
                     <div class="form-group">

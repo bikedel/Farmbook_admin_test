@@ -150,27 +150,6 @@ class VuePropertyController extends Controller
         //change database
         $property = new Property;
         $property->changeConnection($database);
-/*
-$this->validate($request, [
-
-'numErf'         => 'required',
-'numPortion'     => 'required',
-'strStreetNo'    => 'required',
-'strStreetName'  => 'required',
-'strSqMeters'    => 'required',
-'strComplexNo'   => 'required',
-'strComplexName' => 'required',
-'dtmRegDate'     => 'required',
-'strAmount'      => 'required',
-'strBondHolder'  => 'required',
-'strBondAmount'  => 'required',
-//'strIdentity'    => 'required|digits:13',
-'strIdentity'    => 'required',
-'strSellers'     => 'required',
-'strTitleDeed'   => 'required',
-
-]);
- */
 
         $rules = array(
             'numErf'         => 'required',
@@ -292,28 +271,6 @@ $this->validate($request, [
         $property = new Property;
         $property->changeConnection($database);
 
-/*
-$this->validate($request, [
-// 'email' => 'unique:users,email_address,'.$user->id
-// 'Surname'      => 'unique:buyers,surname,' . $id,
-
-'numErf'         => 'required',
-'numPortion'     => 'required',
-'strStreetNo'    => 'required',
-'strStreetName'  => 'required',
-'strSqMeters'    => 'required',
-'strComplexNo'   => 'required',
-'strComplexName' => 'required',
-'dtmRegDate'     => 'required',
-'strAmount'      => 'required',
-'strBondHolder'  => 'required',
-'strBondAmount'  => 'required',
-'strIdentity'    => 'required',
-'strSellers'     => 'required',
-'strTitleDeed'   => 'required',
-]);
- */
-
         $rules = array(
             'numErf'         => 'required',
             'numPortion'     => 'required',
@@ -371,19 +328,34 @@ $this->validate($request, [
         }
 
         // remove id from the form request
-        $tosave = $request->except(['id']);
-        $tosave = $request->except(['strOwners']);
+        $tosave = $request->except(['id', 'strOwners', 'followup', 'note']);
+        //  $tosave = $request->except(['strOwners']);
+        //  $tosave = $request->except(['followup']);
+        //  $tosave = $request->except(['note']);
 
         //find owner and update strOwners - using name from owners table
         $ownerId = $request->input('strIdentity');
         $owner   = Owner::on($database)->where('strIDNumber', '=', $ownerId)->first();
 
         if ($owner->count()) {
-            $edit->strOwners = $owner->NAME;
+            // $edit->strOwners = $owner->NAME;
+            $edit->strOwners = $owner->strFirstName . ' ' . $owner->strSurname;
             $edit->save();
         }
 
+        // update properties
         $edit->update($tosave);
+
+        //update notes
+        $strKey = $request->input('strKey');
+        $note   = Note::on($database)->where('strKey', '=', $strKey)->first();
+        if ($note->count()) {
+            // $edit->strOwners = $owner->NAME;
+            $note->memNotes = $request->input('note');
+            $note->followup = $request->input('followup');
+            $note->save();
+        }
+
         return response()->json($edit);
         //  return response()->json(['test' => 'all data ok so far.'], 422);
     }
