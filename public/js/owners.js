@@ -189,7 +189,7 @@ var vm = new Vue({
                       this.changePage(this.pagination.current_page);
                       toastr.success('Owner Deleted Successfully.', 'Success Alert', {timeOut: 5000});
                       }, (response) => {
-               toastr.error('Owner not deleted.', 'The owner is in properties.', {timeOut: 5000});
+               toastr.error('The owner is in properties.', 'Owner not deleted.', {timeOut: 5000});
                   });
           }
 

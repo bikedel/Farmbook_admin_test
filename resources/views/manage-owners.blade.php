@@ -165,13 +165,13 @@ pre {
             <table class="table table-bordered table-hover">
                 <tr>
                     <th width="120px">Action</th>
-                    <th width="120px">strIDNumber</th>
-                    <th width="120px">strSurname</th>
-                    <th width="120px">strFirstName</th>
-                    <th width="120px">strHomePhoneNo</th>
-                    <th width="120px">strWorkPhoneNo</th>
-                    <th width="120px">strCellPhoneNo</th>
-                    <th width="140px">EMAIL</th>
+                    <th width="120px">ID Number</th>
+                    <th width="120px">Surname</th>
+                    <th width="120px">Firstname</th>
+                    <th width="120px">Home Phone</th>
+                    <th width="120px">Work Phone</th>
+                    <th width="120px">Cell Phone</th>
+                    <th width="140px">Email</th>
                 </tr>
                 <tr v-for="item in items">
                     <td >

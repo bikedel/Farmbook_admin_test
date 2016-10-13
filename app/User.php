@@ -69,6 +69,26 @@ class User extends Authenticatable
         return $data;
     }
 
+    public function getDatabaseType()
+    {
+
+        $data = Farmbook::where('id', '=', $this->farmbook)->first();
+
+        if (is_null($data)) {
+
+            $data = "No database";
+        } else {
+
+            $data = $data->name;
+            if (strpos($data, 'FH') !== false) {
+                $data = "FH";
+            }
+
+        }
+
+        return $data;
+    }
+
     public function isAdmin()
     {
 

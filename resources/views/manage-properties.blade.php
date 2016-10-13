@@ -176,7 +176,7 @@ pre {
                     <th width="300px">Sellers</th>
                     <th width="120px">Reg Date</th>
                     <th width="800px">Notes</th>
-                    <th width="800px">Followup</th>
+                    <th width="120px">Followup</th>
                 </tr>
                 <tr v-for="item in items">
                     <td >
