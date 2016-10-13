@@ -298,7 +298,7 @@ var vm = new Vue({
           this.newItem.strSellers = item.strSellers ;
           this.newItem.strTitleDeed = item.strTitleDeed ;
 
-          this.fillItem.strIdentity = "";
+          this.newItem.strIdentity = "";
           $("#create-item").modal('show');
 
           this.resetErrors();
