@@ -152,7 +152,7 @@ pre {
                 </div>
 
                 <div class="pull-left">
-                    <button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#create-item">
+                    <button type="button" class="btn btn-success btn-md" @click.prevent="createForms">
                       New Property
                     </button>
                 </div>
@@ -238,7 +238,7 @@ pre {
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <button type="button" id="create-item-modal-header-button" class="close" data-dismiss="modal" data-target="#clearforms" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <button type="button" id="create-item-modal-header-button" class="close" data-dismiss="modal"  aria-label="Close"><span aria-hidden="true">×</span></button>
                 <h4 class="modal-title" id="myModalLabel">Create Property</h4>
               </div>
               <div class="modal-body">

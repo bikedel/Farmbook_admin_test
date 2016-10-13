@@ -216,9 +216,9 @@ var vm = new Vue({
       	},
 
 
-      clearforms: function(){
+      createForms: function(){
 
-this.resetErrors();
+                this.resetErrors();
                 this.newItem = {
                         'numErf':'',
                         'numPortion':'',
@@ -236,6 +236,7 @@ this.resetErrors();
                         'strSellers':'',
                         'strTitleDeed':'',
                                };
+                               $("#create-item").modal('show');
       },
 
       deleteItem: function(item){
