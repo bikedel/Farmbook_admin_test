@@ -215,6 +215,29 @@ var vm = new Vue({
         	    });
       	},
 
+
+      clearforms: function(){
+
+this.resetErrors();
+                this.newItem = {
+                        'numErf':'',
+                        'numPortion':'',
+                        'strStreetNo':'',
+                        'strStreetName':'',
+                        'strSqMeters':'',
+                        'strComplexNo':'',
+                        'strComplexName':'',
+                        'dtmRegDate':'',
+                        'strAmount':'',
+                        'strBondHolder':'',
+                        'strBondAmount':'',
+                        'strOwners':'',
+                        'strIdentity':'',
+                        'strSellers':'',
+                        'strTitleDeed':'',
+                               };
+      },
+
       deleteItem: function(item){
 
           var result = confirm("Are you sure you would like to delete this Property?");
