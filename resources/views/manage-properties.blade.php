@@ -164,7 +164,7 @@ pre {
         <div class="slategrey-background " style="overflow-x:auto; border: 12px solid SlateGrey  ;">
             <table class="table table-bordered table-hover">
                 <tr>
-                    <th width="120px">Action</th>
+                    <th width="170px">Action</th>
                     <th width="80px">Erf</th>
                     <th width="80px">Port</th>
                     <th width="80px">Street No</th>
@@ -175,6 +175,7 @@ pre {
                     <th width="300px">Owner</th>
                     <th width="300px">Sellers</th>
                     <th width="120px">Reg Date</th>
+                    <th width="300px">Bond Holder</th>
                     <th width="800px">Notes</th>
                     <th width="120px">Followup</th>
                 </tr>
@@ -182,6 +183,7 @@ pre {
                     <td >
                       <button class="btn btn-primary btn-xs" @click.prevent="editItem(item)">Edit</button>
                       <button class="btn btn-danger btn-xs" @click.prevent="deleteItem(item)">Delete</button>
+                      <button class="btn btn-success btn-xs" @click.prevent="duplicateItem(item)">Duplicate</button>
                     </td>
                     <td>@{{ item.numErf }}</td>
                     <td>@{{ item.numPortion}}</td>
@@ -193,6 +195,7 @@ pre {
                     <td>@{{ item.strOwners}}</td>
                     <td>@{{ item.strSellers}}</td>
                     <td>@{{ item.dtmRegDate}}</td>
+                    <td>@{{ item.strBondHolder}}</td>
                     <td>@{{ item.note.memNotes}}</td>
                     <td>@{{ item.note.followup}}</td>
                 </tr>

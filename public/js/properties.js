@@ -255,6 +255,31 @@ var vm = new Vue({
           this.resetErrors();
       },
 
+      duplicateItem: function(item){
+          //this.fillItem.id = item.id;
+          this.newItem.numErf = item.numErf;
+          this.newItem.strSuburb = item.strSuburb ;
+          this.newItem.numErf = item.numErf ;
+          this.newItem.numPortion = item.numPortion ;
+          this.newItem.strStreetNo = item.strStreetNo ;
+          this.newItem.strStreetName = item.strStreetName ;
+          this.newItem.strSqMeters = item.strSqMeters ;
+          this.newItem.strComplexNo = item.strComplexNo ;
+          this.newItem.strComplexName = item.strComplexName ;
+          this.newItem.dtmRegDate = item.dtmRegDate ;
+          this.newItem.strAmount = item.strAmount ;
+          this.newItem.strBondHolder = item.strBondHolder ;
+          this.newItem.strBondAmount = item.strBondAmount ;
+
+          this.newItem.strSellers = item.strSellers ;
+          this.newItem.strTitleDeed = item.strTitleDeed ;
+
+
+          $("#create-item").modal('show');
+
+          this.resetErrors();
+      },
+
       updateItem: function(id){
 
      
@@ -298,6 +323,7 @@ var vm = new Vue({
       //    $( ".text-danger" ).remove();
 
            this.formErrorsUpdate = "";
+           this.formErrors = "";
       },
 
 

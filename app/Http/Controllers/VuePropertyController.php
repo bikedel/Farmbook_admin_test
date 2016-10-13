@@ -156,13 +156,13 @@ class VuePropertyController extends Controller
             'numPortion'     => 'required',
             'strStreetNo'    => 'required',
             'strStreetName'  => 'required',
-            'strSqMeters'    => 'required',
+            'strSqMeters'    => 'required|Numeric',
             'strComplexNo'   => 'required',
             'strComplexName' => 'required',
             'dtmRegDate'     => 'required',
-            'strAmount'      => 'required',
+            'strAmount'      => 'required|Numeric',
             'strBondHolder'  => 'required',
-            'strBondAmount'  => 'required',
+            'strBondAmount'  => 'required|Numeric',
             //'strIdentity'    => 'required|digits:13',
             'strIdentity'    => 'required',
             'strSellers'     => 'required',
@@ -175,12 +175,15 @@ class VuePropertyController extends Controller
             'strStreetNo.required'    => 'This field is required',
             'strStreetName.required'  => 'This field is required',
             'strSqMeters.required'    => 'This field is required',
+            'strSqMeters.numeric'     => 'This field must be numeric',
             'strComplexNo.required'   => 'This field is required',
             'strComplexName.required' => 'This field is required',
             'dtmRegDate.required'     => 'This field is required',
             'strAmount.required'      => 'This field is required',
+            'strAmount.numeric'       => 'This field must be numeric',
             'strBondHolder.required'  => 'This field is required',
             'strBondAmount.required'  => 'This field is required',
+            'strBondAmount.numeric'   => 'This field must be numeric',
             //'strIdentity'    => 'required|digits:13',
             'strIdentity.required'    => 'This field is required',
             'strSellers.required'     => 'This field is required',
@@ -191,7 +194,7 @@ class VuePropertyController extends Controller
 
         if ($validator->fails()) {
             // send back to the page with the input data and errors
-
+            //$request->merge(array('strStreetNo' => '999'));
             return response()->json($validator->errors()->getMessages(), 422);
 
         }
@@ -224,8 +227,11 @@ class VuePropertyController extends Controller
         $ownerId = $request->input('strIdentity');
         $owner   = Owner::on($database)->where('strIDNumber', '=', $ownerId)->first();
 
+        // update poperties owner with owner name ? name or first and last
         if ($owner->count()) {
-            $tosave['strOwners'] = $owner->NAME;
+
+            //  $tosave['strOwners'] = $owner->NAME;
+            $tosave['strOwners'] = $owner->strFirstName . ' ' . $owner->strSurname;
         }
 
         // update request inputs and insert property
@@ -276,13 +282,14 @@ class VuePropertyController extends Controller
             'numPortion'     => 'required',
             'strStreetNo'    => 'required',
             'strStreetName'  => 'required',
-            'strSqMeters'    => 'required',
+            'strSqMeters'    => 'required|Numeric',
             'strComplexNo'   => 'required',
             'strComplexName' => 'required',
             'dtmRegDate'     => 'required',
-            'strAmount'      => 'required',
+            'strAmount'      => 'required|Numeric',
+
             'strBondHolder'  => 'required',
-            'strBondAmount'  => 'required',
+            'strBondAmount'  => 'required|Numeric',
             //'strIdentity'    => 'required|digits:13',
             'strIdentity'    => 'required',
             'strSellers'     => 'required',
@@ -294,13 +301,16 @@ class VuePropertyController extends Controller
             'numPortion.required'     => 'This field is required',
             'strStreetNo.required'    => 'This field is required',
             'strStreetName.required'  => 'This field is required',
+            'strSqMeters.numeric'     => 'This field must be numeric',
             'strSqMeters.required'    => 'This field is required',
             'strComplexNo.required'   => 'This field is required',
             'strComplexName.required' => 'This field is required',
             'dtmRegDate.required'     => 'This field is required',
             'strAmount.required'      => 'This field is required',
+            'strAmount.numeric'       => 'This field must be numeric',
             'strBondHolder.required'  => 'This field is required',
             'strBondAmount.required'  => 'This field is required',
+            'strBondAmount.numeric'   => 'This field must be numeric',
             //'strIdentity'    => 'required|digits:13',
             'strIdentity.required'    => 'This field is required',
             'strSellers.required'     => 'This field is required',
@@ -344,7 +354,32 @@ class VuePropertyController extends Controller
         }
 
         // update properties
+        // set the numeric fields as they are not in the form
+        $tosave['numStreetNo']  = $request->input('strStreetNo');
+        $tosave['numComplexNo'] = $request->input('strComplexNo');
         $edit->update($tosave);
+
+        // update all properties with the same key - excluding the owner
+        $editall = Property::on($database)->where('strKey', $edit->strKey)->get();
+        $counter = 0;
+        foreach ($editall as $row) {
+            $counter             = $counter + 1;
+            $row->strStreetNo    = $edit->strStreetNo;
+            $row->numStreetNo    = $edit->numStreetNo;
+            $row->strStreetName  = $edit->strStreetName;
+            $row->strSqMeters    = $edit->strSqMeters;
+            $row->strComplexNo   = $edit->strComplexNo;
+            $row->numComplexNo   = $edit->numComplexNo;
+            $row->strComplexName = $edit->strComplexName;
+            $row->dtmRegDate     = $edit->dtmRegDate;
+            $row->strAmount      = $edit->getOriginal('strAmount');
+            $row->strBondHolder  = $edit->strBondHolder;
+            $row->strBondAmount  = $edit->getOriginal('strBondAmount');
+            $row->strSellers     = $edit->strSellers;
+            $row->strTitleDeed   = $edit->strTitleDeed;
+
+            $row->update();
+        }
 
         //update notes
         $strKey = $request->input('strKey');
