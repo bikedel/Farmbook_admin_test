@@ -211,7 +211,7 @@ var vm = new Vue({
           			toastr.success('Property Created Successfully.', 'Success Alert', {timeOut: 5000});
           		}, (response) => {
           			this.formErrors = response.data;
-
+                toastr.error('Error in form.', 'Warning', {timeOut: 5000});
         	    });
       	},
 
