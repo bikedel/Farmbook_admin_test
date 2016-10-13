@@ -205,7 +205,7 @@ class VuePropertyController extends Controller
         $properties = Property::on($database)->where('numErf', $numErf)->where('strIdentity', $identity)->get();
 
         if ($properties->count()) {
-            return response()->json(['test' => 'The Id and Erf already exist.'], 422);
+            return response()->json(['test' => 'The Id is already associated with this Erf.'], 422);
         }
 
         // add new record
