@@ -204,7 +204,7 @@ var vm = new Vue({
                         'strSellers':'',
                         'strTitleDeed':'',
                                };
-
+                this.resetErrors();
           			$("#create-item").modal('hide');
                 $(".modal-header button").click();
 
