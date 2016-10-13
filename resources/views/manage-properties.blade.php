@@ -396,7 +396,7 @@ pre {
                         <span v-if="formErrorsUpdate['strStreetNo']" class="error text-danger">@{{ formErrorsUpdate['strStreetNo'] }}</span>
                     </div>
                     <div class="form-group">
-                        <label for="Firstname">StreetName:</label>
+                        <label for="Firstname">Street Name:</label>
 
                         <select  class="form-control "  v-model="fillItem.strStreetName" style="width: 100%;"  >
                                <option v-for="street in streets" "  >
