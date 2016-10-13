@@ -258,25 +258,25 @@ pre {
                     </div>
 
                     <div class="form-group">
-                        <label for="Surname">numErf:</label>
+                        <label for="Surname">Erf:</label>
                         <input type="text" name="numErf" class="form-control" v-model="newItem.numErf" />
                         <span v-if="formErrors['numErf']" class="error text-danger">@{{ formErrors['numErf'] }}</span>
 
                     </div>
 
                     <div class="form-group">
-                        <label for="Firstname">numPortion:</label>
+                        <label for="Firstname">Portion:</label>
                         <input type="text" name="numPortion" class="form-control" v-model="newItem.numPortion" />
                         <span v-if="formErrors['numPortion']" class="error text-danger">@{{ formErrors['numPortion'] }}</span>
                     </div>
 
                     <div class="form-group">
-                        <label for="Firstname">strStreetNo:</label>
+                        <label for="Firstname">Street No:</label>
                         <input type="text" name="strStreetNo" class="form-control" v-model="newItem.strStreetNo" />
                         <span v-if="formErrors['strStreetNo']" class="error text-danger">@{{ formErrors['strStreetNo'] }}</span>
                     </div>
                     <div class="form-group">
-                        <label for="Firstname">strStreetName:</label>
+                        <label for="Firstname">Street Name:</label>
 
                         <select  class="form-control "  v-model="newItem.strStreetName" style="width: 100%;"  >
                                <option v-for="street in streets" "  >
@@ -288,17 +288,17 @@ pre {
                         <span v-if="formErrors['strStreetName']" class="error text-danger">@{{ formErrors['strStreetName'] }}</span>
                     </div>
                     <div class="form-group">
-                        <label for="Firstname">strSqMeters:</label>
+                        <label for="Firstname">Sq Meters:</label>
                         <input type="text" name="strSqMeters" class="form-control" v-model="newItem.strSqMeters" />
                         <span v-if="formErrors['strSqMeters']" class="error text-danger">@{{ formErrors['strSqMeters'] }}</span>
                     </div>
                     <div class="form-group">
-                        <label for="Firstname">strComplexNo:</label>
+                        <label for="Firstname">Complex No:</label>
                         <input type="text" name="strComplexNo" class="form-control" v-model="newItem.strComplexNo" />
                         <span v-if="formErrors['strComplexNo']" class="error text-danger">@{{ formErrors['strComplexNo'] }}</span>
                     </div>
                     <div class="form-group">
-                        <label for="Firstname">strComplexName:</label>
+                        <label for="Firstname">Complex Name:</label>
                         <select  class="form-control "  v-model="newItem.strComplexName" style="width: 100%;"  >
                                <option v-for="complex in complexes" "  >
                                     @{{ complex.strComplexName }}
@@ -307,38 +307,38 @@ pre {
                         <span v-if="formErrors['strComplexName']" class="error text-danger">@{{ formErrors['strComplexName'] }}</span>
                     </div>
                     <div class="form-group">
-                        <label for="Firstname">dtmRegDate:</label>
+                        <label for="Firstname">Reg Date:</label>
                         <input type="date" name="dtmRegDate" class="form-control datepicker" v-model="newItem.dtmRegDate" />
                         <span v-if="formErrors['dtmRegDate']" class="error text-danger">@{{ formErrors['dtmRegDate'] }}</span>
                     </div>
                     <div class="form-group">
-                        <label for="Firstname">strAmount:</label>
+                        <label for="Firstname">Amount:</label>
                         <input type="text" name="strAmount" class="form-control" v-model="newItem.strAmount" />
                         <span v-if="formErrors['strAmount']" class="error text-danger">@{{ formErrors['strAmount'] }}</span>
                     </div>
                     <div class="form-group">
-                        <label for="Firstname">strBondHolder:</label>
+                        <label for="Firstname">Bond Holder:</label>
                         <input type="text" name="strBondHolder" class="form-control" v-model="newItem.strBondHolder" />
                         <span v-if="formErrors['strBondHolder']" class="error text-danger">@{{ formErrors['strBondHolder'] }}</span>
                     </div>
                     <div class="form-group">
-                        <label for="Firstname">strBondAmount:</label>
+                        <label for="Firstname">Bond Amount:</label>
                         <input type="text" name="strBondAmount" class="form-control" v-model="newItem.strBondAmount" />
                         <span v-if="formErrors['strBondAmount']" class="error text-danger">@{{ formErrors['strBondAmount'] }}</span>
                     </div>
 
                     <div class="form-group">
-                        <label for="Firstname">strSellers:</label>
+                        <label for="Firstname">Sellers:</label>
                         <input type="text" name="strSellers" class="form-control" v-model="newItem.strSellers" />
                         <span v-if="formErrors['strSellers']" class="error text-danger">@{{ formErrors['strSellers'] }}</span>
                     </div>
                     <div class="form-group">
-                        <label for="Firstname">strTitleDeed:</label>
+                        <label for="Firstname">Title Deed:</label>
                         <input type="text" name="strTitleDeed" class="form-control" v-model="newItem.strTitleDeed" />
                         <span v-if="formErrors['strTitleDeed']" class="error text-danger">@{{ formErrors['strTitleDeed'] }}</span>
                     </div>
                     <div class="form-group">
-                        <label for="Firstname">strIdentity:</label>
+                        <label for="Firstname">Id Number:</label>
                         <select  class="form-control "  v-model="newItem.strIdentity" style="width: 100%;"  >
                                <option v-for="owner in owners" "  >
                                     @{{ owner.strIDNumber }}
