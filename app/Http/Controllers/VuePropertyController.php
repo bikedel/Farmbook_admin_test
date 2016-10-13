@@ -205,7 +205,7 @@ class VuePropertyController extends Controller
         $properties = Property::on($database)->where('numErf', $numErf)->where('strIdentity', $identity)->get();
 
         if ($properties->count()) {
-            return response()->json(['test' => 'The Id is already associated with this Erf.'], 422);
+            return response()->json(['test' => 'The Id Number is already associated with this Erf.'], 422);
         }
 
         // add new record
@@ -334,7 +334,7 @@ class VuePropertyController extends Controller
         $properties = Property::on($database)->where('numErf', $numErf)->where('strIdentity', $identity)->where('id', '!=', $id)->get();
 
         if ($properties->count()) {
-            return response()->json(['test' => 'The Id is already associated with this Erf.'], 422);
+            return response()->json(['test' => 'The Id Number is already associated with this Erf.'], 422);
         }
 
         // remove id from the form request
