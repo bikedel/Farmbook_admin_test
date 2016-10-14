@@ -156,7 +156,7 @@ class VueOwnerController extends Controller
             'strFirstName'   => 'required',
             'strHomePhoneNo' => 'required|Numeric',
             'strWorkPhoneNo' => 'required|Numeric',
-            'strCellPhoneNo' => 'required|Numeric',
+            'strCellPhoneNo' => 'required',
             'EMAIL'          => 'required|email',
 
         );
