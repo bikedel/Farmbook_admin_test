@@ -177,7 +177,7 @@ var vm = new Vue({
           			toastr.success('Owner Created Successfully.', 'Success Alert', {timeOut: 5000});
           		}, (response) => {
           			this.formErrors = response.data;
-
+              toastr.error('Error in form.', 'Warning', {timeOut: 5000});
         	    });
       	},
 
@@ -232,7 +232,7 @@ var vm = new Vue({
             toastr.success('Owner Updated Successfully.', 'Success Alert', {timeOut: 5000});
           }, (response) => {
               this.formErrorsUpdate = response.data;
-              toastr.error('Owner not updated.', 'Form has errors', {timeOut: 5000});
+                            toastr.error('Error in form.', 'Warning', {timeOut: 5000});
           });
       },
 
