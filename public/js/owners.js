@@ -241,7 +241,7 @@ var vm = new Vue({
             toastr.success('Owner Updated Successfully.', 'Success Alert', {timeOut: 5000});
           }, (response) => {
               this.formErrorsUpdate = response.data;
-                            toastr.error('Error in form.', 'Warning', {timeOut: 5000});
+               toastr.error('Error in form. '+response.status, 'Warning', {timeOut: 5000});
           });
       },
 
