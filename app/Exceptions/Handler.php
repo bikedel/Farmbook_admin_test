@@ -46,6 +46,11 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $e)
     {
 
+/*
+if ($e instanceof MethodNotAllowedHttpException) {
+return redirect()->guest('login');
+}
+ */
         if ($e instanceof \Illuminate\Session\TokenMismatchException) {
 
             return redirect()->guest('login');

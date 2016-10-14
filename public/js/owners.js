@@ -128,9 +128,10 @@ var vm = new Vue({
             this.$http.get('/farmbook_admin_test/public/vueowners?page='+page).then((response) => {
               this.$set('items', response.data.data.data);
               this.$set('pagination', response.data.pagination);
+              }, (response) => {
 
-
-            });
+              toastr.error('Error '+response.status, 'Warning', {timeOut: 5000});
+              });
 
 
         },
