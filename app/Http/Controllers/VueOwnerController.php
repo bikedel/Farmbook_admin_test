@@ -222,9 +222,9 @@ class VueOwnerController extends Controller
             'strIDNumber'    => 'required',
             'strSurname'     => 'required',
             'strFirstName'   => 'required',
-            'strHomePhoneNo' => 'required',
-            'strWorkPhoneNo' => 'required',
-            'strCellPhoneNo' => 'required',
+            'strHomePhoneNo' => 'required|Numeric',
+            'strWorkPhoneNo' => 'required|Numeric',
+            'strCellPhoneNo' => 'required|Numeric',
             'EMAIL'          => 'required|email',
 
         );
@@ -237,6 +237,9 @@ class VueOwnerController extends Controller
             'strHomePhoneNo.required' => 'This field is required',
             'strWorkPhoneNo.required' => 'This field is required',
             'strCellPhoneNo.required' => 'This field is required',
+            'strHomePhoneNo.numeric'  => 'This field must be numeric',
+            'strWorkPhoneNo.numeric'  => 'This field must be numeric',
+            'strCellPhoneNo.numeric'  => 'This field must be numeric',
             'EMAIL.required'          => 'This field is required',
             'EMAIL.email'             => 'This field must be a valid email address',
         );
