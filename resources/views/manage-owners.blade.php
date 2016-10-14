@@ -166,6 +166,8 @@ pre {
                 <tr>
                     <th width="120px">Action</th>
                     <th width="120px">Id Number</th>
+                    <th width="120px">Title</th>
+                    <th width="120px">Initials</th>
                     <th width="120px">Surname</th>
                     <th width="120px">Firstname</th>
                     <th width="120px">Home Phone</th>
@@ -179,6 +181,8 @@ pre {
                       <button class="btn btn-danger btn-xs" @click.prevent="deleteItem(item)">Delete</button>
                     </td>
                     <td>@{{ item.strIDNumber }}</td>
+                    <td>@{{ item.TITLE}}</td>
+                    <td>@{{ item.INITIALS}}</td>
                     <td>@{{ item.strSurname}}</td>
                     <td>@{{ item.strFirstName}}</td>
                     <td>@{{ item.strHomePhoneNo}}</td>
@@ -252,6 +256,18 @@ pre {
                     </div>
 
                     <div class="form-group">
+                        <label for="strSurname">Title:</label>
+                        <input type="text" name="TITLE" class="form-control" v-model="newItem.TITLE" />
+                        <span v-if="formErrors['TITLE']" class="error text-danger">@{{ formErrors['TITLE'] }}</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="strSurname">Initials:</label>
+                        <input type="text" name="INITIALS" class="form-control" v-model="newItem.INITIALS" />
+                        <span v-if="formErrors['INITIALS']" class="error text-danger">@{{ formErrors['INITIALS'] }}</span>
+                    </div>
+
+                    <div class="form-group">
                         <label for="strSurname">Surname:</label>
                         <input type="text" name="strSurname" class="form-control" v-model="newItem.strSurname" />
                         <span v-if="formErrors['strSurname']" class="error text-danger">@{{ formErrors['strSurname'] }}</span>
@@ -317,6 +333,17 @@ pre {
                         <input type="text" name="strIDNumber" class="form-control" v-model="fillItem.strIDNumber" readonly/>
                         <span v-if="formErrorsUpdate['strIDNumber']" class="error text-danger">@{{ formErrorsUpdate['strIDNumber'] }}</span>
 
+                    </div>
+                    <div class="form-group">
+                        <label for="strSurname">Title:</label>
+                        <input type="text" name="TITLE" class="form-control" v-model="fillItem.TITLE" />
+                        <span v-if="formErrorsUpdate['TITLE']" class="error text-danger">@{{ formErrorsUpdate['TITLE'] }}</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="strSurname">Initials:</label>
+                        <input type="text" name="INITIALS" class="form-control" v-model="fillItem.INITIALS" />
+                        <span v-if="formErrorsUpdate['INITIALS']" class="error text-danger">@{{ formErrorsUpdate['INITIALS'] }}</span>
                     </div>
 
                     <div class="form-group">

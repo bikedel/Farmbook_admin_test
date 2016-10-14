@@ -20,7 +20,8 @@ var data =  {
     formErrorsUpdate:{},
     newItem : { 
 
-
+          'TITLE:':'',
+          'INITIALS':'',
           'strIDNumber':'',
           'strSurname':'',
           'strFirstName':'',
@@ -35,6 +36,8 @@ var data =  {
 
     fillItem : { 
           'id':'',
+          'TITLE:':'',
+          'INITIALS':'',
           'strIDNumber':'',
           'strSurname':'',
           'strFirstName':'',
@@ -162,6 +165,8 @@ var vm = new Vue({
       		  this.$http.post('/farmbook_admin_test/public/vueowners',input).then((response) => {
           		  this.changePage(this.pagination.current_page);
           			this.newItem = {
+                        'TITLE:':'',
+                        'INITIALS':'',
                         'strIDNumber':'',
                         'strSurname':'',
                         'strFirstName':'',
@@ -197,6 +202,8 @@ var vm = new Vue({
 
       editItem: function(item){
           this.fillItem.id = item.id;
+          this.fillItem.TITLE = item.TITLE;
+          this.fillItem.INITIALS = item.INITIALS;
           this.fillItem.strIDNumber = item.strIDNumber;
           this.fillItem.strSurname = item.strSurname ;
           this.fillItem.strFirstName = item.strFirstName ;
@@ -220,6 +227,8 @@ var vm = new Vue({
             this.changePage(this.pagination.current_page);
             this.fillItem = {
                         'id':'',
+                        'TITLE:':'',
+                        'INITIALS':'',
                         'strIDNumber':'',
                         'strSurname':'',
                         'strFirstName':'',
