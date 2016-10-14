@@ -48,11 +48,12 @@ class Handler extends ExceptionHandler
 
         if ($e instanceof \Illuminate\Session\TokenMismatchException) {
 
-            return redirect()
-                ->back()
-                ->withInput($request->except('_token'))
-                ->withMessage('Your explanation message depending on how much you want to dumb it down, lol! ');
-
+            return redirect()->guest('login');
+            /* return redirect()
+        ->back()
+        ->withInput($request->except('_token'))
+        ->withMessage('Your explanation message depending on how much you want to dumb it down, lol! ');
+         */
         }
         return parent::render($request, $e);
     }
