@@ -152,7 +152,7 @@ pre {
                 </div>
 
                 <div class="pull-left">
-                    <button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#create-item">
+                    <button type="button" class="btn btn-success btn-md" @click.prevent="createForms">
                       New Owner
                     </button>
                 </div>

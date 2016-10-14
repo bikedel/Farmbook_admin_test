@@ -187,6 +187,26 @@ var vm = new Vue({
         	    });
       	},
 
+
+
+      createForms: function(){
+
+                this.resetErrors();
+                this.newItem = {
+                        'TITLE':'',
+                        'INITIALS':'',
+                        'strIDNumber':'',
+                        'strSurname':'',
+                        'strFirstName':'',
+                        'strHomePhoneNo':'',
+                        'strWorkPhoneNo':'',
+                        'strCellPhoneNo':'',
+                        'EMAIL':'',
+                               };
+                $("#create-item").modal('show');
+      },
+
+
       deleteItem: function(item){
 
           var result = confirm("Are you sure you would like to delete this Property?");
