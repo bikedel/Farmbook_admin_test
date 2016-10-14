@@ -246,7 +246,7 @@ var vm = new Vue({
                   } else {
                    toastr.error('Error in form. '+response.status, 'Warning', {timeOut: 5000});
                   }
-              }
+              
           });
       },
 
