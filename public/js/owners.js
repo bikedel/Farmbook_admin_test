@@ -277,6 +277,7 @@ var vm = new Vue({
       //    $( ".text-danger" ).remove();
 
            this.formErrorsUpdate = "";
+           this.formErrors = "";
       },
 
 
