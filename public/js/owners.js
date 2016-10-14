@@ -194,7 +194,7 @@ var vm = new Vue({
                       this.changePage(this.pagination.current_page);
                       toastr.success('Owner Deleted Successfully.', 'Success Alert', {timeOut: 5000});
                       }, (response) => {
-               toastr.error('Owner not deleted.', 'Owner not deleted.', {timeOut: 5000});
+               toastr.error('Owner cannot be deleted.', 'Warning', {timeOut: 5000});
                   });
           }
 
