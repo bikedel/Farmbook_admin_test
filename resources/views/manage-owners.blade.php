@@ -165,7 +165,7 @@ pre {
             <table class="table table-bordered table-hover">
                 <tr>
                     <th width="120px">Action</th>
-                    <th width="120px">ID Number</th>
+                    <th width="120px">Id Number</th>
                     <th width="120px">Surname</th>
                     <th width="120px">Firstname</th>
                     <th width="120px">Home Phone</th>
@@ -245,41 +245,41 @@ pre {
                     </div>
 
                     <div class="form-group">
-                        <label for="strIDNumber">strIDNumber:</label>
+                        <label for="strIDNumber">Id Number:</label>
                         <input type="text" name="strIDNumber" class="form-control" v-model="newItem.strIDNumber" />
                         <span v-if="formErrors['strIDNumber']" class="error text-danger">@{{ formErrors['strIDNumber'] }}</span>
 
                     </div>
 
                     <div class="form-group">
-                        <label for="strSurname">strSurname:</label>
+                        <label for="strSurname">Surname:</label>
                         <input type="text" name="strSurname" class="form-control" v-model="newItem.strSurname" />
                         <span v-if="formErrors['strSurname']" class="error text-danger">@{{ formErrors['strSurname'] }}</span>
                     </div>
 
                     <div class="form-group">
-                        <label for="strFirstName">strFirstName:</label>
+                        <label for="strFirstName">Firstname:</label>
                         <input type="text" name="strFirstName" class="form-control" v-model="newItem.strFirstName" />
                         <span v-if="formErrors['strFirstName']" class="error text-danger">@{{ formErrors['strFirstName'] }}</span>
                     </div>
                     <div class="form-group">
-                        <label for="strHomePhoneNo">strHomePhoneNo:</label>
+                        <label for="strHomePhoneNo">Home Phone:</label>
                         <input type="text" name="strHomePhoneNo" class="form-control" v-model="newItem.strHomePhoneNo" />
                         <span v-if="formErrors['strHomePhoneNo']" class="error text-danger">@{{ formErrors['strHomePhoneNo'] }}</span>
                     </div>
                     <div class="form-group">
-                        <label for="strWorkPhoneNo">strWorkPhoneNo:</label>
+                        <label for="strWorkPhoneNo">Work Phone:</label>
                         <input type="text" name="strWorkPhoneNo" class="form-control" v-model="newItem.strWorkPhoneNo" />
                         <span v-if="formErrors['strWorkPhoneNo']" class="error text-danger">@{{ formErrors['strWorkPhoneNo'] }}</span>
                     </div>
 
                     <div class="form-group">
-                        <label for="strCellPhoneNo">strCellPhoneNo:</label>
+                        <label for="strCellPhoneNo">Cell Phone:</label>
                         <input type="text" name="strCellPhoneNo" class="form-control " v-model="newItem.strCellPhoneNo" />
                         <span v-if="formErrors['strCellPhoneNo']" class="error text-danger">@{{ formErrors['strCellPhoneNo'] }}</span>
                     </div>
                     <div class="form-group">
-                        <label for="EMAIL">EMAIL:</label>
+                        <label for="EMAIL">Email:</label>
                         <input type="text" name="EMAIL" class="form-control" v-model="newItem.EMAIL" />
                         <span v-if="formErrors['EMAIL']" class="error text-danger">@{{ formErrors['EMAIL'] }}</span>
                     </div>
@@ -313,41 +313,41 @@ pre {
                     </div>
 
                     <div class="form-group">
-                        <label for="strIDNumber">strIDNumber:</label>
+                        <label for="strIDNumber">Id Number:</label>
                         <input type="text" name="strIDNumber" class="form-control" v-model="fillItem.strIDNumber" readonly/>
                         <span v-if="formErrorsUpdate['strIDNumber']" class="error text-danger">@{{ formErrorsUpdate['strIDNumber'] }}</span>
 
                     </div>
 
                     <div class="form-group">
-                        <label for="strSurname">strSurname:</label>
+                        <label for="strSurname">Surname:</label>
                         <input type="text" name="strSurname" class="form-control" v-model="fillItem.strSurname" />
                         <span v-if="formErrorsUpdate['strSurname']" class="error text-danger">@{{ formErrorsUpdate['strSurname'] }}</span>
                     </div>
 
                     <div class="form-group">
-                        <label for="strFirstName">strFirstName:</label>
+                        <label for="strFirstName">Firstname:</label>
                         <input type="text" name="strFirstName" class="form-control" v-model="fillItem.strFirstName" />
                         <span v-if="formErrorsUpdate['strFirstName']" class="error text-danger">@{{ formErrorsUpdate['strFirstName'] }}</span>
                     </div>
                     <div class="form-group">
-                        <label for="strHomePhoneNo">strHomePhoneNo:</label>
+                        <label for="strHomePhoneNo">Home Phone:</label>
                         <input type="text" name="strHomePhoneNo" class="form-control" v-model="fillItem.strHomePhoneNo" />
                         <span v-if="formErrorsUpdate['strHomePhoneNo']" class="error text-danger">@{{ formErrorsUpdate['strHomePhoneNo'] }}</span>
                     </div>
                     <div class="form-group">
-                        <label for="strWorkPhoneNo">strWorkPhoneNo:</label>
+                        <label for="strWorkPhoneNo">Work Phone:</label>
                         <input type="text" name="strWorkPhoneNo" class="form-control" v-model="fillItem.strWorkPhoneNo" />
                         <span v-if="formErrorsUpdate['strWorkPhoneNo']" class="error text-danger">@{{ formErrorsUpdate['strWorkPhoneNo'] }}</span>
                     </div>
 
                     <div class="form-group">
-                        <label for="strCellPhoneNo">strCellPhoneNo:</label>
+                        <label for="strCellPhoneNo">Cell Phone:</label>
                         <input type="text" name="strCellPhoneNo" class="form-control " v-model="fillItem.strCellPhoneNo" />
                         <span v-if="formErrorsUpdate['strCellPhoneNo']" class="error text-danger">@{{ formErrorsUpdate['strCellPhoneNo'] }}</span>
                     </div>
                     <div class="form-group">
-                        <label for="EMAIL">EMAIL:</label>
+                        <label for="EMAIL">Email:</label>
                         <input type="text" name="EMAIL" class="form-control" v-model="fillItem.EMAIL" />
                         <span v-if="formErrorsUpdate['EMAIL']" class="error text-danger">@{{ formErrorsUpdate['EMAIL'] }}</span>
                     </div>
