@@ -35,7 +35,7 @@ class UserController extends Controller
 
         // dd("user controller");
 
-        $users = User::orderBy('Name')->all();
+        $users = User::orderBy('Name')->get();
 
         return view('users', compact('users'));
     }
