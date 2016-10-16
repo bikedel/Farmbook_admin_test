@@ -370,6 +370,6 @@ var vm = new Vue({
           this.getVueItems(page);
       }
 
-  }
+  
 
 });
