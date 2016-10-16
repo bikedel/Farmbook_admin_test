@@ -164,7 +164,7 @@ pre {
         <div class="slategrey-background " style="overflow-x:auto; border: 12px solid SlateGrey  ;">
             <table class="table table-bordered table-hover">
                 <tr>
-                    <th width="170px">Action</th>
+                    <th width="180px">Action</th>
                     <th width="80px">Erf</th>
                     <th width="80px">Port</th>
                     <th width="80px">Street No</th>
