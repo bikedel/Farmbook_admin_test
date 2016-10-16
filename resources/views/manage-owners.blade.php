@@ -168,12 +168,12 @@ pre {
                     <th width="130px">Id Number</th>
                     <th width="120px">Title</th>
                     <th width="120px">Initials</th>
-                    <th width="120px">Surname</th>
+                    <th width="200px">Surname</th>
                     <th width="120px">Firstname</th>
-                    <th width="120px">Home Phone</th>
-                    <th width="120px">Work Phone</th>
-                    <th width="120px">Cell Phone</th>
-                    <th width="140px">Email</th>
+                    <th width="160px">Home Phone</th>
+                    <th width="160px">Work Phone</th>
+                    <th width="160px">Cell Phone</th>
+                    <th width="300px">Email</th>
                 </tr>
                 <tr v-for="item in items">
                     <td >
