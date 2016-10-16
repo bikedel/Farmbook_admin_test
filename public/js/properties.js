@@ -236,7 +236,7 @@ var vm = new Vue({
                         'strSellers':'',
                         'strTitleDeed':'',
                                };
-                               $("#myCreateModalLabel").text("Add Owner");
+                               
                                $("#create-item").modal('show');
                                
                             
@@ -302,6 +302,7 @@ var vm = new Vue({
           this.newItem.strTitleDeed = item.strTitleDeed ;
 
           this.newItem.strIdentity = "";
+          $("#myCreateModalLabel").text("Add Owner");
           $("#create-item").modal('show');
 
           this.resetErrors();
