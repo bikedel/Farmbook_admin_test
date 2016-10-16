@@ -262,11 +262,9 @@ var vm = new Vue({
             toastr.success('Owner Updated Successfully.', 'Success Alert', {timeOut: 5000});
           }, (response) => {
                   this.formErrorsUpdate = response.data;
-                  if (response.status = 405 ){
-                    toastr.error('Session expired, refresh browser. '+response.status, 'Warning', {timeOut: 5000});
-                  } else {
+
                    toastr.error('Error in form. '+response.status, 'Warning', {timeOut: 5000});
-                  }
+
               
           });
       },
