@@ -238,7 +238,8 @@ var vm = new Vue({
                                };
 
                                $("#create-item").modal('show');
-                               $("#create-item").myModalLabel.modal-title.innerHtml = "hello";
+                               $('#myCreateModalLabel').text("Add Owner");
+                            
       },
 
       deleteItem: function(item){
