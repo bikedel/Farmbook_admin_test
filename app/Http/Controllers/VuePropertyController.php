@@ -116,7 +116,7 @@ class VuePropertyController extends Controller
         $property = new Property;
         $property->changeConnection($database);
 
-        $items = Property::on($database)->where('numErf', 'like', $search)->latest()->paginate(10);
+        $items = Property::on($database)->where('numErf', 'like', $search . '%')->latest()->paginate(10);
 
         $items->load('owner', 'note');
 
