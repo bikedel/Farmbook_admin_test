@@ -238,7 +238,7 @@ var vm = new Vue({
                                };
 
                                $("#create-item").modal('show');
-                               $('#myCreateModalLabel').text("Add Owner");
+                               $('#myCreateModalLabel').html("Add Owner");
                             
       },
 
