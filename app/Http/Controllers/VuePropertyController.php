@@ -118,6 +118,8 @@ class VuePropertyController extends Controller
 
         $items = Property::on($database)->where('numErf', 'like', $search)->latest()->paginate(10);
 
+        $items->load('owner', 'note');
+
         //array_unshift($users, ['name' => 'Select ']);
         $response = [
             'pagination' => [
