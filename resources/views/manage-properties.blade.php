@@ -183,7 +183,7 @@ pre {
                     <td >
                       <button class="btn btn-primary btn-xs" @click.prevent="editItem(item)">Edit</button>
                       <button class="btn btn-danger btn-xs" @click.prevent="deleteItem(item)">Delete</button>
-                      <button class="btn btn-success btn-xs" @click.prevent="duplicateItem(item)">Duplicate</button>
+                      <button class="btn btn-success btn-xs" @click.prevent="duplicateItem(item)">Add Owner</button>
                     </td>
                     <td>@{{ item.numErf }}</td>
                     <td>@{{ item.numPortion}}</td>
