@@ -364,13 +364,9 @@ var vm = new Vue({
 
       changePage: function (page) {
           this.pagination.current_page = page;
-          if(this.search.string){
-            this.searchVueItems(page);
-          }else{
           this.getVueItems(page);
       }
-    },
 
-  
+  }
 
 });
