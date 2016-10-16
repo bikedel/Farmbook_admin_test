@@ -236,7 +236,7 @@ var vm = new Vue({
                         'strSellers':'',
                         'strTitleDeed':'',
                                };
-                               
+                               $("#myCreateModalLabel").text("Create Property");
                                $("#create-item").modal('show');
                                
                             
