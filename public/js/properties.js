@@ -215,7 +215,7 @@ var vm = new Vue({
         	    });
       	},
 
-
+      // add new owner
       createForms: function(){
 
                 this.resetErrors();
@@ -236,7 +236,9 @@ var vm = new Vue({
                         'strSellers':'',
                         'strTitleDeed':'',
                                };
+
                                $("#create-item").modal('show');
+                               $("#create-item").myModalLabel.modal-title.innerHtml = "hello";
       },
 
       deleteItem: function(item){
