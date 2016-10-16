@@ -369,6 +369,7 @@ var vm = new Vue({
           }else{
           this.getVueItems(page);
       }
+    },
 
   
 
