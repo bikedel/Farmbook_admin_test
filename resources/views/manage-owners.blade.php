@@ -165,7 +165,7 @@ pre {
             <table class="table table-bordered table-hover">
                 <tr>
                     <th width="120px">Action</th>
-                    <th width="120px">Id Number</th>
+                    <th width="130px">Id Number</th>
                     <th width="120px">Title</th>
                     <th width="120px">Initials</th>
                     <th width="120px">Surname</th>
