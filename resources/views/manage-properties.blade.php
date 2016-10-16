@@ -175,6 +175,7 @@ pre {
                     <th width="300px">Owner</th>
                     <th width="300px">Sellers</th>
                     <th width="120px">Reg Date</th>
+                    <th width="120px">Amount</th>
                     <th width="300px">Bond Holder</th>
                     <th width="800px">Notes</th>
                     <th width="120px">Followup</th>
@@ -195,6 +196,7 @@ pre {
                     <td>@{{ item.strOwners}}</td>
                     <td>@{{ item.strSellers}}</td>
                     <td>@{{ item.dtmRegDate}}</td>
+                    <td>@{{ item.strAmount}}</td>
                     <td>@{{ item.strBondHolder}}</td>
                     <td>@{{ item.note.memNotes}}</td>
                     <td>@{{ item.note.followup}}</td>
