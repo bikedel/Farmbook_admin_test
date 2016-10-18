@@ -211,7 +211,7 @@ class VueOwnerController extends Controller
         $email       = $currentuser->email;
         $olddbname   = Farmbook::select('name')->where('id', $oldfarmbook)->first();
         $action      = 'New Owner';
-        $comment     = $olddbname->name . " - " . $tosave['strIDNumber'];
+        $comment     = $olddbname->name . " - Id Number: " . $tosave['strIDNumber'];
         $append      = \Carbon\Carbon::now('Africa/Johannesburg')->toDateTimeString() . ',          ' . trim($email) . ',          ' . $action . ',' . $comment;
         Storage::append('logfile.txt', $append);
 
