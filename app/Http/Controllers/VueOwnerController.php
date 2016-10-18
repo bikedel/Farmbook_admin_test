@@ -202,11 +202,13 @@ class VueOwnerController extends Controller
         $owner = Owner::on($database)->insert($tosave);
 
         //log
-        $action      = 'New Owner';
-        $comment     = $olddbname->name . " - " . $tosave['strIDNumber'];
+
         $id          = Auth::user()->id;
         $currentuser = User::find($id);
+        $oldfarmbook = $currentuser->farmbook;
         $email       = $currentuser->email;
+        $action      = 'New Owner';
+        $comment     = $olddbname->name . " - " . $tosave['strIDNumber'];
         $append      = \Carbon\Carbon::now('Africa/Johannesburg')->toDateTimeString() . ',          ' . trim($email) . ',          ' . $action . ',' . $comment;
         Storage::append('logfile.txt', $append);
 
