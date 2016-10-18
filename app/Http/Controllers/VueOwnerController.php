@@ -276,6 +276,18 @@ class VueOwnerController extends Controller
         $tosave = $request->except(['id']);
 
         $edit->update($tosave);
+
+        //log
+        $id          = Auth::user()->id;
+        $currentuser = User::find($id);
+        $oldfarmbook = $currentuser->farmbook;
+        $email       = $currentuser->email;
+        $olddbname   = Farmbook::select('name')->where('id', $oldfarmbook)->first();
+        $action      = 'Update Owner';
+        $comment     = $olddbname->name . " - Id Number: " . $tosave['strIDNumber'];
+        $append      = \Carbon\Carbon::now('Africa/Johannesburg')->toDateTimeString() . ',          ' . trim($email) . ',          ' . $action . ',' . $comment;
+        Storage::append('logfile.txt', $append);
+
         return response()->json($edit);
         //  return response()->json(['test' => 'all data ok so far.'], 422);
     }
