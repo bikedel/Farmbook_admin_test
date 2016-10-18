@@ -204,7 +204,6 @@ class VueOwnerController extends Controller
         $owner = Owner::on($database)->insert($tosave);
 
         //log
-
         $id          = Auth::user()->id;
         $currentuser = User::find($id);
         $oldfarmbook = $currentuser->farmbook;
@@ -309,6 +308,17 @@ class VueOwnerController extends Controller
         }
 
         $owner->delete();
+
+        //log
+        $id          = Auth::user()->id;
+        $currentuser = User::find($id);
+        $oldfarmbook = $currentuser->farmbook;
+        $email       = $currentuser->email;
+        $olddbname   = Farmbook::select('name')->where('id', $oldfarmbook)->first();
+        $action      = 'Delete Owner';
+        $comment     = $olddbname->name . " - Id Number: " . $idnumber;
+        $append      = \Carbon\Carbon::now('Africa/Johannesburg')->toDateTimeString() . ',          ' . trim($email) . ',          ' . $action . ',' . $comment;
+        Storage::append('logfile.txt', $append);
 
         return response()->json(['done']);
     }
