@@ -427,7 +427,7 @@ class VuePropertyController extends Controller
         $property = new Property;
         $property->changeConnection($database);
 
-        $prop = Property::on($database)->find($id)->get();
+        $prop = Property::on($database)->find($id);
 
         $key    = $prop->strKey;
         $propid = $prop->strIdentity;
