@@ -9,6 +9,7 @@ use App\Property;
 use App\Street;
 use Auth;
 use Carbon;
+use Storage;
 use Illuminate\Http\Request;
 
 class VueOwnerController extends Controller
@@ -199,6 +200,13 @@ class VueOwnerController extends Controller
         $tosave['updated_at'] = \Carbon\Carbon::now()->toDateTimeString();
         // save new owner
         $owner = Owner::on($database)->insert($tosave);
+
+        //log
+        $action  = 'New Owner';
+        $comment = $olddbname->name . " - " . $tosave['strIDNumber']
+        $email   = $currentuser->email;
+        $append  = \Carbon\Carbon::now('Africa/Johannesburg')->toDateTimeString() . ',          ' . trim($email) . ',          ' . $action . ',' . $comment;
+        Storage::append('logfile.txt', $append);
 
         return response()->json($owner);
 
