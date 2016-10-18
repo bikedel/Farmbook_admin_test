@@ -3,14 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Complex;
+use App\farmbook;
 use App\Http\Controllers\Controller;
 use App\Note;
 use App\Owner;
 use App\Property;
 use App\Street;
+use App\User;
 use Auth;
 use Carbon;
 use Illuminate\Http\Request;
+use Storage;
 
 class VuePropertyController extends Controller
 {
@@ -255,6 +258,17 @@ class VuePropertyController extends Controller
         if (!count($exists)) {
             $notes = Note::on($database)->insert($note);
         }
+
+        //log
+        $id          = Auth::user()->id;
+        $currentuser = User::find($id);
+        $oldfarmbook = $currentuser->farmbook;
+        $email       = $currentuser->email;
+        $olddbname   = Farmbook::select('name')->where('id', $oldfarmbook)->first();
+        $action      = 'New Property';
+        $comment     = $olddbname->name . " - Id Number: " . $tosave['strIdentity'];
+        $append      = \Carbon\Carbon::now('Africa/Johannesburg')->toDateTimeString() . ',          ' . trim($email) . ',          ' . $action . ',' . $comment;
+        Storage::append('logfile.txt', $append);
 
         return response()->json($property);
         //return response()->json(['test' => 'all data ok so far.'], 422);
