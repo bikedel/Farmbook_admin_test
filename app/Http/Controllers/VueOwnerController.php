@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Owner;
 use App\Property;
 use App\Street;
+use App\User;
 use Auth;
 use Carbon;
 use Illuminate\Http\Request;
