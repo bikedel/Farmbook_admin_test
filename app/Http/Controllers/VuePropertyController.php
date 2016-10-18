@@ -407,6 +407,17 @@ class VuePropertyController extends Controller
             $note->save();
         }
 
+        //log
+        $id          = Auth::user()->id;
+        $currentuser = User::find($id);
+        $oldfarmbook = $currentuser->farmbook;
+        $email       = $currentuser->email;
+        $olddbname   = Farmbook::select('name')->where('id', $oldfarmbook)->first();
+        $action      = 'Update Property';
+        $comment     = $olddbname->name . " - Key: " . $tosave['strKey'] . " Id Number: " . $tosave['strIdentity'];
+        $append      = \Carbon\Carbon::now('Africa/Johannesburg')->toDateTimeString() . ',          ' . trim($email) . ',          ' . $action . ',' . $comment;
+        Storage::append('logfile.txt', $append);
+
         return response()->json($edit);
         //  return response()->json(['test' => 'all data ok so far.'], 422);
     }
