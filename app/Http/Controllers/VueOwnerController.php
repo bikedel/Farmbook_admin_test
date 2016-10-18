@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Complex;
+use App\Farmbook;
 use App\Http\Controllers\Controller;
 use App\Owner;
 use App\Property;
