@@ -168,6 +168,7 @@ pre {
                     <th width="130px">Id Number</th>
                     <th width="120px">Title</th>
                     <th width="120px">Initials</th>
+                    <th width="120px">Name</th>
                     <th width="200px">Surname</th>
                     <th width="120px">Firstname</th>
                     <th width="160px">Home Phone</th>
@@ -183,6 +184,7 @@ pre {
                     <td>@{{ item.strIDNumber }}</td>
                     <td>@{{ item.TITLE}}</td>
                     <td>@{{ item.INITIALS}}</td>
+                    <td>@{{ item.NAME}}</td>
                     <td>@{{ item.strSurname}}</td>
                     <td>@{{ item.strFirstName}}</td>
                     <td>@{{ item.strHomePhoneNo}}</td>
@@ -268,6 +270,12 @@ pre {
                     </div>
 
                     <div class="form-group">
+                        <label for="strSurname">Name:</label>
+                        <input type="text" name="NAME" class="form-control" v-model="newItem.NAME" />
+                        <span v-if="formErrors['NAME']" class="error text-danger">@{{ formErrors['NAME'] }}</span>
+                    </div>
+
+                    <div class="form-group">
                         <label for="strSurname">Surname:</label>
                         <input type="text" name="strSurname" class="form-control" v-model="newItem.strSurname" />
                         <span v-if="formErrors['strSurname']" class="error text-danger">@{{ formErrors['strSurname'] }}</span>
@@ -344,6 +352,12 @@ pre {
                         <label for="strSurname">Initials:</label>
                         <input type="text" name="INITIALS" class="form-control" v-model="fillItem.INITIALS" />
                         <span v-if="formErrorsUpdate['INITIALS']" class="error text-danger">@{{ formErrorsUpdate['INITIALS'] }}</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="strSurname">Name:</label>
+                        <input type="text" name="NAME" class="form-control" v-model="fillItem.NAME" />
+                        <span v-if="formErrorsUpdate['NAME']" class="error text-danger">@{{ formErrorsUpdate['NAME'] }}</span>
                     </div>
 
                     <div class="form-group">

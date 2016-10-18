@@ -22,6 +22,7 @@ var data =  {
 
           'TITLE':'',
           'INITIALS':'',
+          'NAME':'',
           'strIDNumber':'',
           'strSurname':'',
           'strFirstName':'',
@@ -38,6 +39,7 @@ var data =  {
           'id':'',
           'TITLE':'',
           'INITIALS':'',
+          'NAME':'',
           'strIDNumber':'',
           'strSurname':'',
           'strFirstName':'',
@@ -168,6 +170,7 @@ var vm = new Vue({
           			this.newItem = {
                         'TITLE':'',
                         'INITIALS':'',
+                        'NAME':'',
                         'strIDNumber':'',
                         'strSurname':'',
                         'strFirstName':'',
@@ -195,6 +198,7 @@ var vm = new Vue({
                 this.newItem = {
                         'TITLE':'',
                         'INITIALS':'',
+                        'NAME':'',
                         'strIDNumber':'',
                         'strSurname':'',
                         'strFirstName':'',
@@ -225,6 +229,7 @@ var vm = new Vue({
           this.fillItem.id = item.id;
           this.fillItem.TITLE = item.TITLE;
           this.fillItem.INITIALS = item.INITIALS;
+          this.fillItem.NAME = item.NAME;
           this.fillItem.strIDNumber = item.strIDNumber;
           this.fillItem.strSurname = item.strSurname ;
           this.fillItem.strFirstName = item.strFirstName ;
@@ -250,6 +255,7 @@ var vm = new Vue({
                         'id':'',
                         'TITLE':'',
                         'INITIALS':'',
+                        'NAME':'',
                         'strIDNumber':'',
                         'strSurname':'',
                         'strFirstName':'',
