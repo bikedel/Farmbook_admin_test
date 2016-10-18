@@ -168,7 +168,7 @@ pre {
                     <th width="130px">Id Number</th>
                     <th width="120px">Title</th>
                     <th width="120px">Initials</th>
-                    <th width="120px">Name</th>
+                    <th width="300px">Name</th>
                     <th width="200px">Surname</th>
                     <th width="120px">Firstname</th>
                     <th width="160px">Home Phone</th>
