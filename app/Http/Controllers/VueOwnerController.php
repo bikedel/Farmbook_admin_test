@@ -9,8 +9,8 @@ use App\Property;
 use App\Street;
 use Auth;
 use Carbon;
-use Storage;
 use Illuminate\Http\Request;
+use Storage;
 
 class VueOwnerController extends Controller
 {
@@ -202,12 +202,12 @@ class VueOwnerController extends Controller
         $owner = Owner::on($database)->insert($tosave);
 
         //log
-        $action  = 'New Owner';
-        $comment = $olddbname->name . " - " . $tosave['strIDNumber']
+        $action      = 'New Owner';
+        $comment     = $olddbname->name . " - " . $tosave['strIDNumber'];
         $id          = Auth::user()->id;
         $currentuser = User::find($id);
-        $email   = $currentuser->email;
-        $append  = \Carbon\Carbon::now('Africa/Johannesburg')->toDateTimeString() . ',          ' . trim($email) . ',          ' . $action . ',' . $comment;
+        $email       = $currentuser->email;
+        $append      = \Carbon\Carbon::now('Africa/Johannesburg')->toDateTimeString() . ',          ' . trim($email) . ',          ' . $action . ',' . $comment;
         Storage::append('logfile.txt', $append);
 
         return response()->json($owner);
