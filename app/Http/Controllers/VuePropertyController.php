@@ -266,7 +266,7 @@ class VuePropertyController extends Controller
         $email       = $currentuser->email;
         $olddbname   = Farmbook::select('name')->where('id', $oldfarmbook)->first();
         $action      = 'New Property';
-        $comment     = $olddbname->name . " - Id Number: " . $tosave['strIdentity'];
+        $comment     = $olddbname->name . " - Key: " . $tosave['strIdentity'] . " Id Number: " . $tosave['strIdentity'];
         $append      = \Carbon\Carbon::now('Africa/Johannesburg')->toDateTimeString() . ',          ' . trim($email) . ',          ' . $action . ',' . $comment;
         Storage::append('logfile.txt', $append);
 
