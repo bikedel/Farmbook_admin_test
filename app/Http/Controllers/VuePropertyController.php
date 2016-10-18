@@ -427,7 +427,23 @@ class VuePropertyController extends Controller
         $property = new Property;
         $property->changeConnection($database);
 
-        Property::on($database)->find($id)->delete();
+        $prop = Property::on($database)->find($id)->get();
+
+        $key    = $prop->strKey;
+        $propid = $prop->strIdentity;
+
+        $prop->delete();
+
+        //log
+        $id          = Auth::user()->id;
+        $currentuser = User::find($id);
+        $oldfarmbook = $currentuser->farmbook;
+        $email       = $currentuser->email;
+        $olddbname   = Farmbook::select('name')->where('id', $oldfarmbook)->first();
+        $action      = 'Delete Property';
+        $comment     = $olddbname->name . " - Key: " . $key . " Id Number: " . $propid;
+        $append      = \Carbon\Carbon::now('Africa/Johannesburg')->toDateTimeString() . ',          ' . trim($email) . ',          ' . $action . ',' . $comment;
+        Storage::append('logfile.txt', $append);
 
         return response()->json(['done']);
     }
