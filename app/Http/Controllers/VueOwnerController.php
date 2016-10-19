@@ -155,6 +155,9 @@ class VueOwnerController extends Controller
 
         $rules = array(
             'strIDNumber'    => 'required|unique:' . $database . '.owners',
+            'TITLE'          => 'required',
+            'INITIALS'       => 'required',
+            'NAME'           => 'required',
             'strSurname'     => 'required',
             'strFirstName'   => 'required',
             'strHomePhoneNo' => 'required|Numeric',
@@ -167,6 +170,9 @@ class VueOwnerController extends Controller
         $messsages = array(
             'strIDNumber.required'    => 'This field is required',
             'strIDNumber.unique'      => 'This field must be unique',
+            'TITLE.required'          => 'This field is required',
+            'INITIALS.required'       => 'This field is required',
+            'NAME.required'           => 'This field is required',
             'strSurname.required'     => 'This field is required',
             'strFirstName.required'   => 'This field is required',
             'strHomePhoneNo.required' => 'This field is required',
@@ -237,6 +243,9 @@ class VueOwnerController extends Controller
 
         $rules = array(
             'strIDNumber'    => 'required',
+            'TITLE'          => 'required',
+            'INITIALS'       => 'required',
+            'NAME'           => 'required',
             'strSurname'     => 'required',
             'strFirstName'   => 'required',
             'strHomePhoneNo' => 'required|Numeric',
@@ -248,7 +257,9 @@ class VueOwnerController extends Controller
 
         $messsages = array(
             'strIDNumber.required'    => 'This field is required',
-
+            'TITLE.required'          => 'This field is required',
+            'INITIALS.required'       => 'This field is required',
+            'NAME.required'           => 'This field is required',
             'strSurname.required'     => 'This field is required',
             'strFirstName.required'   => 'This field is required',
             'strHomePhoneNo.required' => 'This field is required',
