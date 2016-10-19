@@ -171,7 +171,7 @@
 
                          <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                             Manage <span class="caret"></span>
+                             Maintain <span class="caret"></span>
                             </a>
 
                                  <ul class="dropdown-menu" role="menu">
