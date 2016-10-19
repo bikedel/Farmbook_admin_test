@@ -37,7 +37,7 @@ input:-webkit-autofill {
     }
 
     th {
-        background-color: rosybrown;
+        background-color: #D9E3EE;
     }
 
     table td  {
@@ -58,11 +58,11 @@ input:-webkit-autofill {
     }
 
     .slategrey-background {
-      background-color: #ECF2F9;
+      background-color: #D9E3EE;
     }
 
 .modal-header {
-    background-color: #D9E3EE;
+    background-color: #008DB7;
 }
 
 .modal-body {
