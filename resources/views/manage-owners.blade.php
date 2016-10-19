@@ -58,7 +58,7 @@ input:-webkit-autofill {
     }
 
     .slategrey-background {
-      background-color: #008DB7;
+      background-color: WhiteSmoke;
     }
 
 .modal-header {
