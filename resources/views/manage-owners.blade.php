@@ -37,7 +37,7 @@ input:-webkit-autofill {
     }
 
     th {
-        background-color: #D9E3EE;
+        background-color: #BBCDE1;
     }
 
     table td  {
