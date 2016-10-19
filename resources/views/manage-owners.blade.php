@@ -62,7 +62,7 @@ input:-webkit-autofill {
     }
 
 .modal-header {
-    background-color: #008DB7;
+    background-color: #D9E3EE;
 }
 
 .modal-body {
