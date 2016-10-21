@@ -155,15 +155,15 @@ class VueOwnerController extends Controller
 
         $rules = array(
             'strIDNumber'    => 'required|unique:' . $database . '.owners',
-            'TITLE'          => 'required',
-            'INITIALS'       => 'required',
-            'NAME'           => 'required',
-            'strSurname'     => 'required',
-            'strFirstName'   => 'required',
-            'strHomePhoneNo' => 'required|Numeric',
-            'strWorkPhoneNo' => 'required|Numeric',
-            'strCellPhoneNo' => 'required',
-            'EMAIL'          => 'required|email',
+            // 'TITLE'          => 'required',
+            // 'INITIALS'       => 'required',
+            // 'NAME'           => 'required',
+            // 'strSurname'     => 'required',
+            // 'strFirstName'   => 'required',
+            'strHomePhoneNo' => 'Numeric',
+            'strWorkPhoneNo' => 'Numeric',
+            'strCellPhoneNo' => 'Numeric',
+            // 'EMAIL'          => 'required|email',
 
         );
 
