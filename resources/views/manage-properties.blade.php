@@ -473,6 +473,12 @@ pre {
                     </div>
 
                     <div class="form-group">
+                        <label for="Firstname">Previous Notes:</label>
+                        <textarea  name="note" rows="5" class="form-control" v-model="fillItem.note" readonly></textarea>
+                        <span v-if="formErrorsUpdate['note']" class="error text-danger">@{{ formErrorsUpdate['note'] }}</span>
+                    </div>
+
+                    <div class="form-group">
                         <label for="Firstname">Notes:</label>
                         <textarea  name="note" rows="5" class="form-control" v-model="fillItem.note" ></textarea>
                         <span v-if="formErrorsUpdate['note']" class="error text-danger">@{{ formErrorsUpdate['note'] }}</span>
