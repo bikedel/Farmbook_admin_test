@@ -314,7 +314,7 @@ pre {
                         <span v-if="formErrors['strComplexName']" class="error text-danger">@{{ formErrors['strComplexName'] }}</span>
                     </div>
                     <div class="form-group">
-                        <label for="Firstname">Reg Date: YYYY-MM-DD</label>
+                        <label for="Firstname">Reg Date:   [YYYY-MM-DD]</label>
                         <input type="date" name="dtmRegDate" class="form-control datepicker" v-model="newItem.dtmRegDate" />
                         <span v-if="formErrors['dtmRegDate']" class="error text-danger">@{{ formErrors['dtmRegDate'] }}</span>
                     </div>
@@ -432,7 +432,7 @@ pre {
                         <span v-if="formErrorsUpdate['strComplexName']" class="error text-danger">@{{ formErrorsUpdate['strComplexName'] }}</span>
                     </div>
                     <div class="form-group">
-                        <label for="Firstname">Reg Date:</label>
+                        <label for="Firstname">Reg Date:    [YYYY-MM-DD]</label>
                         <input type="date" name="dtmRegDate" class="form-control datepicker" v-model="fillItem.dtmRegDate" />
                         <span v-if="formErrorsUpdate['dtmRegDate']" class="error text-danger">@{{ formErrorsUpdate['dtmRegDate'] }}</span>
                     </div>
