@@ -298,18 +298,18 @@ class VuePropertyController extends Controller
             'numPortion'     => 'required',
             'strStreetNo'    => 'required',
             'strStreetName'  => 'required',
-            'strSqMeters'    => 'required|Numeric',
+            'strSqMeters'    => 'Numeric',
             'strComplexNo'   => 'required',
             'strComplexName' => 'required',
-            'dtmRegDate'     => 'required',
-            'strAmount'      => 'required|Numeric',
+            //'dtmRegDate'     => 'required',
+            'strAmount'      => 'Numeric',
 
-            'strBondHolder'  => 'required',
-            'strBondAmount'  => 'required|Numeric',
+            //'strBondHolder'  => 'required',
+            'strBondAmount'  => 'Numeric',
             //'strIdentity'    => 'required|digits:13',
             'strIdentity'    => 'required',
-            'strSellers'     => 'required',
-            'strTitleDeed'   => 'required',
+            //'strSellers'     => 'required',
+            //'strTitleDeed'   => 'required',
         );
 
         $messsages = array(
