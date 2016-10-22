@@ -355,7 +355,7 @@ class VuePropertyController extends Controller
         }
 
         // remove id from the form request
-        $tosave = $request->except(['id', 'strOwners', 'followup', 'note']);
+        $tosave = $request->except(['id', 'strOwners', 'followup', 'note', 'newnote']);
         //  $tosave = $request->except(['strOwners']);
         //  $tosave = $request->except(['followup']);
         //  $tosave = $request->except(['note']);
