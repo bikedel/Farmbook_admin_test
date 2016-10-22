@@ -61,6 +61,7 @@ var data =  {
           'strSuburb':'',
           'followup':'',
           'note':'',
+          'newnote':'',
 
               },
 
@@ -275,6 +276,7 @@ var vm = new Vue({
           this.fillItem.strTitleDeed = item.strTitleDeed ;
           this.fillItem.strKey = item.strKey ;
           this.fillItem.note = item.note.memNotes ;
+          this.fillItem.newnote = '';
           this.fillItem.followup = item.note.followup ;
 
           $("#edit-item").modal('show');
@@ -336,6 +338,7 @@ var vm = new Vue({
               'strSuburb':'',
               'followup':'',
               'note':'',
+              'newnote':'',
           };
             $("#edit-item").modal('hide');
             toastr.success('Property Updated Successfully.', 'Success Alert', {timeOut: 5000});

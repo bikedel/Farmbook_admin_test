@@ -480,8 +480,8 @@ pre {
 
                     <div class="form-group">
                         <label for="Firstname">Notes:</label>
-                        <textarea  name="note" rows="5" class="form-control" v-model="fillItem.note" ></textarea>
-                        <span v-if="formErrorsUpdate['note']" class="error text-danger">@{{ formErrorsUpdate['note'] }}</span>
+                        <textarea  name="newnote" rows="5" class="form-control" v-model="fillItem.newnote" ></textarea>
+                        <span v-if="formErrorsUpdate['newnote']" class="error text-danger">@{{ formErrorsUpdate['newnote'] }}</span>
                     </div>
 
                     <div class="form-group">

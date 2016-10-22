@@ -401,11 +401,31 @@ class VuePropertyController extends Controller
         //update notes
         $strKey = $request->input('strKey');
         $note   = Note::on($database)->where('strKey', '=', $strKey)->first();
+
         if ($note->count()) {
             // $edit->strOwners = $owner->NAME;
-            $note->memNotes = $edit->note->memNotes . '\n' . $request->input('note');
-            $note->followup = $request->input('followup');
-            $note->save();
+
+            // get logged in user
+            $user = Auth::user()->name;
+            $now  = Carbon\Carbon::now('Africa/Cairo')->toDateTimeString();
+
+
+            $newnote = $request->input('newnote');
+
+            // check if there is a new note
+            if (strlen($newnote) > 0) {
+                // if a previous note exists add a carrige return and new note
+                if (strlen($edit->note->memNotes) > 0) {
+                    $updatednote = ltrim(rtrim($edit->note->memNotes)) . "\n" . $now . " " . $user . " wrote: " . "\n" . $newnote;
+                } else {
+                    // add just the new note
+                    $updatednote = $now . " " . $user . " wrote: " . "\n" . $newnote;
+                }
+
+                $note->memNotes = $updatednote
+                $note->followup = $request->input('followup');
+                $note->save();
+            }
         }
 
         //log
