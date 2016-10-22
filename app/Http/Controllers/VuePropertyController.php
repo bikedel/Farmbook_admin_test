@@ -403,7 +403,7 @@ class VuePropertyController extends Controller
         $note   = Note::on($database)->where('strKey', '=', $strKey)->first();
         if ($note->count()) {
             // $edit->strOwners = $owner->NAME;
-            $note->memNotes = $request->input('note');
+            $note->memNotes = $edit->note->memNotes . '\n' . $request->input('note');
             $note->followup = $request->input('followup');
             $note->save();
         }
