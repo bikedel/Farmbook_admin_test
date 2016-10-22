@@ -409,7 +409,6 @@ class VuePropertyController extends Controller
             $user = Auth::user()->name;
             $now  = Carbon\Carbon::now('Africa/Cairo')->toDateTimeString();
 
-
             $newnote = $request->input('newnote');
 
             // check if there is a new note
@@ -422,7 +421,7 @@ class VuePropertyController extends Controller
                     $updatednote = $now . " " . $user . " wrote: " . "\n" . $newnote;
                 }
 
-                $note->memNotes = $updatednote
+                $note->memNotes = $updatednote;
                 $note->followup = $request->input('followup');
                 $note->save();
             }
