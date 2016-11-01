@@ -11,6 +11,7 @@ use App\Street;
 use App\User;
 use Auth;
 use Carbon;
+use DB;
 use Illuminate\Http\Request;
 use Storage;
 
