@@ -12,6 +12,7 @@ use App\User;
 use Auth;
 use Carbon;
 use DB;
+use Excel;
 use Illuminate\Http\Request;
 use Storage;
 
