@@ -13,7 +13,6 @@ use Auth;
 use Carbon;
 use DB;
 use Excel;
-use hydrate;
 use Illuminate\Http\Request;
 use Storage;
 
@@ -366,8 +365,7 @@ class VueOwnerController extends Controller
             ->where('strWorkPhoneNo', '!=', '')
             ->get();
 
-        $owners = hydrate($ownersRaw);
-
+        $owners = collect($ownersRaw);
         // dd($owners);
 
         Excel::create('OwnerWithNoContacts_' . $now, function ($excel) use ($owners) {
