@@ -360,11 +360,12 @@ class VueOwnerController extends Controller
 
         $owners = DB::connection($database)->table('owners')
             ->join('properties', 'strIdentity', '=', 'strIDNumber')
-            ->select('strIdentity', 'NAME', 'numErf')
+            ->select('numErf', 'strStreetNo', 'strStreetName', 'strIdentity', 'NAME', 'strIdentity')
             ->where('strHomePhoneNo', '!=', '')
             ->where('strWorkPhoneNo', '!=', '')
             ->where('strCellPhoneNo', '!=', '')
             ->distinct()
+            ->orderBy('strStreetName')
             ->get();
 
         // $owners = collect($ownersRaw);
