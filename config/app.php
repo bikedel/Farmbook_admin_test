@@ -158,6 +158,7 @@ return [
         Yajra\Datatables\DatatablesServiceProvider::class,
         Khill\Lavacharts\Laravel\LavachartsServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class,
     ],
 
     /*
@@ -207,6 +208,7 @@ return [
         'Html'       => Collective\Html\HtmlFacade::class,
         'Datatables' => Yajra\Datatables\Datatables::class,
         'Image'      => Intervention\Image\Facades\Image::class,
+        'Excel'      => Maatwebsite\Excel\Facades\Excel::class,
     ],
 
 ];
