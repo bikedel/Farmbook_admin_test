@@ -360,7 +360,7 @@ class VueOwnerController extends Controller
 
         $owners = DB::connection($database)->table('owners')
             ->join('properties', 'strIdentity', '=', 'strIDNumber')
-            ->select('numErf', 'strStreetNo', 'strStreetName', 'strIdentity', 'NAME', 'strIdentity')
+            ->select('numErf', 'strStreetNo', 'strStreetName', 'NAME', 'strIdentity')
             ->where('strHomePhoneNo', '!=', '')
             ->where('strWorkPhoneNo', '!=', '')
             ->where('strCellPhoneNo', '!=', '')
@@ -372,7 +372,8 @@ class VueOwnerController extends Controller
         foreach ($owners as &$owner) {
             $owner = (array) $owner;
         }
-        // dd($owners);
+
+        //dd($owners);
 
         Excel::create('OwnerWithNoContacts_' . $now, function ($excel) use ($owners) {
 
