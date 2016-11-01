@@ -182,5 +182,5 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('manage-owners', 'VueOwnerController@manageVue');
     Route::resource('vueowners', 'VueOwnerController');
     Route::post('searchvueowners/{search}', 'VueOwnerController@search');
-
+    Route::get('/exportOwners', 'VueOwnerController@export')->name('exportOwners');;
 });
