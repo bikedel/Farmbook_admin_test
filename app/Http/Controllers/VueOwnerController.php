@@ -359,7 +359,8 @@ class VueOwnerController extends Controller
         $ownerDB->changeConnection($database);
 
         $owners = DB::connection($database)
-            ->from('owners', 'properties')
+            ->table('owners')
+            ->table('properties')
 
         //->join('properties', 'strIdentity', '=', 'strIDNumber')
             ->select('numErf', 'strStreetNo', 'strStreetName', 'strOwners', 'strIdentity')
