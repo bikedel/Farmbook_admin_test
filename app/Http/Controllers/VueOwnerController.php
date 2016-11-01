@@ -13,6 +13,7 @@ use Auth;
 use Carbon;
 use DB;
 use Excel;
+use hydrate;
 use Illuminate\Http\Request;
 use Storage;
 
