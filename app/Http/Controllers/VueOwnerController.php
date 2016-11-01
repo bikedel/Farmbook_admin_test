@@ -365,6 +365,8 @@ class VueOwnerController extends Controller
             ->where('strWorkPhoneNo', '!=', '')
             ->get();
 
+        dd($owners);
+
         Excel::create('OwnerWithNoContacts_' . $now, function ($excel) use ($owners) {
 
             $excel->setTitle('Owners with no Contact Details ');
