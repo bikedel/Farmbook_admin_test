@@ -364,7 +364,7 @@ class VueOwnerController extends Controller
             ->where('strHomePhoneNo', '!=', '')
             ->where('strWorkPhoneNo', '!=', '')
             ->where('strCellPhoneNo', '!=', '')
-            ->distinct()
+            ->distinct('strIdentity')
             ->orderBy('strStreetName')
             ->get();
 
