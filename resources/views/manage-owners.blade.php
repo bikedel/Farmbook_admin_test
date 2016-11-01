@@ -151,6 +151,9 @@ pre {
                 </div>
 
                  <div class="pull-right">
+                    <button type="button" class="btn btn-warning btn-md" @click.prevent="export">
+                      Export no contacts
+                    </button>
                     <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#">
                       @{{pagination.total}} Records
                     </button>
