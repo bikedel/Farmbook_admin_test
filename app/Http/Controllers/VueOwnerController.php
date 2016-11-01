@@ -359,7 +359,7 @@ class VueOwnerController extends Controller
         $ownerDB->changeConnection($database);
 
         $owners = DB::connection($database)->select(DB::raw("select distinct(strIdentity),strOwners,numErf,strStreetNo,strStreetName from owners,properties where strIdentity = strIDNumber
-            and strHomePhoneNo = '' and strWorkPhoneNo = '' and strCellPhoneNo = '' order by strStreetName"));
+            and strHomePhoneNo = '' and strWorkPhoneNo = '' and strCellPhoneNo = '' group by strIdentity order by strStreetName"));
 
 /*
 ->tables('owners','properties')
