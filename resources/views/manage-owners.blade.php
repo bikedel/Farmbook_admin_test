@@ -151,7 +151,7 @@ pre {
                 </div>
 
                  <div class="pull-right">
-                    <a href="{{ URL::route('exportOwners') }}" class="btn btn-warning"> Export</a>
+                    <a href="{{ URL::route('exportOwners') }}" class="btn btn-warning"> Export no contacts</a>
                     <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#">
                       @{{pagination.total}} Records
                     </button>
