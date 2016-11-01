@@ -363,6 +363,8 @@ class VueOwnerController extends Controller
             ->select('strIdentity', 'NAME', 'numErf')
             ->where('strHomePhoneNo', '!=', '')
             ->where('strWorkPhoneNo', '!=', '')
+            ->where('strCellPhoneNo', '!=', '')
+            ->distinct()
             ->get();
 
         // $owners = collect($ownersRaw);
