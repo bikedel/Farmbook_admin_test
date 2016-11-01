@@ -357,7 +357,7 @@ class VueOwnerController extends Controller
             ->join('properties', 'strIdentity', '=', 'strIDNumber')
             ->select('strIdentity', 'NAME', 'numErf')
             ->where('strHomePhoneNo', '!=', '')
-            ->andWhere('strWorkPhoneNo', '!=', '')
+            ->where('strWorkPhoneNo', '!=', '')
             ->get();
 
         Excel::create('OwnerWithNoContacts_' . $now, function ($excel) use ($owners) {
