@@ -381,7 +381,7 @@ class VueOwnerController extends Controller
 
         //dd($owners);
 
-        Excel::create('OwnerWithNoContacts_' . $now, function ($excel) use ($owners) {
+        Excel::create($database . '_OwnerWithNoContacts_' . $now, function ($excel) use ($owners) {
 
             $excel->setTitle('Owners with no Contact Details ');
             $excel->setCreator('Owners')->setCompany('Sothebys');
