@@ -353,7 +353,9 @@ class VueOwnerController extends Controller
         $now = \Carbon\Carbon::now();
 //$buyers = Buyer::select('*')->get();
 
-        $owners = DB::table('owners')
+        $database = Auth::user()->getDatabase();
+
+        $owners = DB::connection($database)->table('owners')
             ->join('properties', 'strIdentity', '=', 'strIDNumber')
             ->select('strIdentity', 'NAME', 'numErf')
             ->where('strHomePhoneNo', '!=', '')
