@@ -393,7 +393,7 @@ class VueOwnerController extends Controller
 // Set height for a single row
                 $sheet->setHeight(1, 20);
 
-                $sheet->cells('A1:U1', function ($cells) {
+                $sheet->cells('A1:C1', function ($cells) {
 
 // manipulate the range of cells
                     // Set black background
