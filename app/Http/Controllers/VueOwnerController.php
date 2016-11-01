@@ -348,63 +348,68 @@ class VueOwnerController extends Controller
 
     public function export()
     {
-/*
-$now    = \Carbon\Carbon::now();
-$buyers = Buyer::select('*')->get();
 
-//$buyers->load('users');
+        $now = \Carbon\Carbon::now();
+//$buyers = Buyer::select('*')->get();
 
-Excel::create('Buyers_' . $now, function ($excel) use ($buyers) {
+        $owners = DB::table('owners')
+            ->join('properties', 'strIdentity', '=', 'strIDNumber')
+            ->select('strIdentity', 'NAME', 'numErf')
+            ->where('strHomePhoneNo', '!=', '')
+            ->andWhere('strWorkPhoneNo', '!=', '')
+            ->get();
 
-$excel->setTitle('Exported Buyers ');
-$excel->setCreator('Buyers')->setCompany('Sothebys');
-$excel->setDescription('Buyers');
+        Excel::create('OwnerWithNoContacts_' . $now, function ($excel) use ($owners) {
 
-$excel->sheet('Sheet 1', function ($sheet) use ($buyers) {
-$sheet->fromArray($buyers, null, 'A1', true, true);
+            $excel->setTitle('Owners with no Contact Details ');
+            $excel->setCreator('Owners')->setCompany('Sothebys');
+            $excel->setDescription('Owners');
+
+            $excel->sheet('Sheet 1', function ($sheet) use ($owners) {
+                $sheet->fromArray($owners, null, 'A1', true, true);
 
 // Add as very first
-//   $sheet->prependRow(2, array(
-//       '', '',
-//   ));
+                //   $sheet->prependRow(2, array(
+                //       '', '',
+                //   ));
 
 // Sets all borders
-//$sheet->setAllBorders('thin');
+                //$sheet->setAllBorders('thin');
 
 // Set border for cells
-//$sheet->setBorder('A1', 'thin');
+                //$sheet->setBorder('A1', 'thin');
 
 // Set border for range
-//$sheet->setBorder('A1:E1', 'thin');
-// Freeze first row
-$sheet->freezeFirstRow();
+                //$sheet->setBorder('A1:E1', 'thin');
+                // Freeze first row
+                $sheet->freezeFirstRow();
 
 // Set height for a single row
-$sheet->setHeight(1, 20);
+                $sheet->setHeight(1, 20);
 
-$sheet->cells('A1:U1', function ($cells) {
+                $sheet->cells('A1:U1', function ($cells) {
 
 // manipulate the range of cells
-// Set black background
-$cells->setBackground('#008DB7');
+                    // Set black background
+                    $cells->setBackground('#008DB7');
 
 // Set with font color
-$cells->setFontColor('#ffffff');
+                    $cells->setFontColor('#ffffff');
 
 // Set font
-$cells->setFont(array(
-'family' => 'Verdana',
-'size'   => '12',
-'bold'   => false,
+                    $cells->setFont(array(
+                        'family' => 'Verdana',
+                        'size'   => '12',
+                        'bold'   => false,
 
-));
+                    ));
 
 //$cells->setBorder('solid', 'solid', 'solid', 'solid');
 
-});
+                });
 
-});
-})->export('xls');
- */
+            });
+        })->export('xls');
+
     }
 }
