@@ -373,7 +373,7 @@ class VueOwnerController extends Controller
             $owner = (array) $owner;
         }
 
-        //dd($owners);
+        dd($owners);
 
         Excel::create('OwnerWithNoContacts_' . $now, function ($excel) use ($owners) {
 
