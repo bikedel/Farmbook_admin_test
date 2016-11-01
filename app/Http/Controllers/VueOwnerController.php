@@ -360,7 +360,7 @@ class VueOwnerController extends Controller
 
         $owners = DB::connection($database)->table('owners')
             ->join('properties', 'strIdentity', '=', 'strIDNumber')
-            ->select('numErf', 'strStreetNo', 'strStreetName', 'NAME', 'strIdentity')
+            ->select('numErf', 'strStreetNo', 'strStreetName', 'strOwners', 'strIdentity')
             ->where('strHomePhoneNo', '!=', '')
             ->where('strWorkPhoneNo', '!=', '')
             ->where('strCellPhoneNo', '!=', '')
