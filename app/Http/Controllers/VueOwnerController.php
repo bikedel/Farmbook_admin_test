@@ -354,8 +354,10 @@ class VueOwnerController extends Controller
 //$buyers = Buyer::select('*')->get();
 
         $database = Auth::user()->getDatabase();
+        $ownerDB  = new Owner;
+        $ownerDB->changeConnection($database);
 
-        $owners = DB::connection($database)->table('owners')
+        $owners = DB::connection($ownerDB)->table('owners')
             ->join('properties', 'strIdentity', '=', 'strIDNumber')
             ->select('strIdentity', 'NAME', 'numErf')
             ->where('strHomePhoneNo', '!=', '')
