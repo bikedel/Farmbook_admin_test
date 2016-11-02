@@ -387,8 +387,8 @@ class VueOwnerController extends Controller
         $oldfarmbook = $currentuser->farmbook;
         $email       = $currentuser->email;
         $olddbname   = Farmbook::select('name')->where('id', $oldfarmbook)->first();
-        $action      = 'Export no contacts';
-        $comment     = $olddbname->name . " - " . '_OwnerWithNoContacts_' . $now;
+        $action      = 'Export ';
+        $comment     = $olddbname->name . '_OwnerWithNoContacts_' . $now;
         $append      = \Carbon\Carbon::now('Africa/Johannesburg')->toDateTimeString() . ',          ' . trim($email) . ',          ' . $action . ',' . $comment;
         Storage::append('logfile.txt', $append);
 
