@@ -381,6 +381,17 @@ class VueOwnerController extends Controller
 
         //dd($owners);
 
+        //log
+        $id          = Auth::user()->id;
+        $currentuser = User::find($id);
+        $oldfarmbook = $currentuser->farmbook;
+        $email       = $currentuser->email;
+        $olddbname   = Farmbook::select('name')->where('id', $oldfarmbook)->first();
+        $action      = 'Export no contacts';
+        $comment     = $olddbname->name . " - " . '_OwnerWithNoContacts_' . $now;
+        $append      = \Carbon\Carbon::now('Africa/Johannesburg')->toDateTimeString() . ',          ' . trim($email) . ',          ' . $action . ',' . $comment;
+        Storage::append('logfile.txt', $append);
+
         Excel::create($database . '_OwnerWithNoContacts_' . $now, function ($excel) use ($owners) {
 
             $excel->setTitle('Owners with no Contact Details ');
